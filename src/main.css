@@ -1,0 +1,12 @@
+.valid-callout {
+  visibility: hidden;
+}
+body  {
+  background-color: silver;
+}
+
+.form-control {
+  background-color: darkorange;
+  border-radius: 30%;
+  border: 5px ridge maroon;
+}
