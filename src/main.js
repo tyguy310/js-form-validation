@@ -6,6 +6,7 @@ $(document).ready(function()  {
 
     var firstName = $('#firstName').val();
     var lastName = $('#lastName').val();
+    var eMail = $('#email').val();
 
     if (firstLetterCapital(firstName)){
       showCallout("Capitalize the first letter")
@@ -18,6 +19,10 @@ $(document).ready(function()  {
     if (validateFirst(firstName)) {
       showCallout("Your name is too short!");
     }
+
+    if (validateEmail(eMail)) {
+      showCallout("Enter a valid email address");
+    }
   });
 });
 function hideCallout()  {
@@ -28,6 +33,10 @@ function firstLetterCapital(name) {
   return (name[0] !== name[0].toUpperCase()) ? true:false;
 }
 
+function  validateEmail(email)  {
+  return (email.indexOf('@')+1 === email.lastIndexOf('.'))
+  || (email.indexOf('@')<=0)  ? true:false
+}
 
  function showCallout(msg)  {
    $('.valid-callout > h2').text(msg);
