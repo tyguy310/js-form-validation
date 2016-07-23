@@ -8,11 +8,7 @@ $(document).ready(function()  {
     var lastName = $('#lastName').val();
     var eMail = $('#email').val();
 
-    if (firstLetterCapital(firstName)) {
-      showCallout('Capitalize the first letter');
-    }
-
-    if (firstLetterCapital(lastName)) {
+    if (firstLetterCapital(firstName) || firstLetterCapital(lastName)) {
       showCallout('Capitalize the first letter');
     }
 
