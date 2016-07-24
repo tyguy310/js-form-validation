@@ -21,6 +21,13 @@ $(document).ready(function()  {
     }
   });
 });
+
+function showCallout(msg)  {
+  $('.valid-callout > h2').text(msg);
+  $('.valid-callout').css('visibility', 'visible');
+  setTimeout(hideCallout, 2000);
+}
+
 function hideCallout()  {
   $('.valid-callout').css('visibility', 'hidden');
 }
@@ -29,17 +36,11 @@ function firstLetterCapital(name) {
   return (name[0] !== name[0].toUpperCase()) ? true : false;
 }
 
-function  validateEmail(email)  {
-  return (email.indexOf('@') + 1 === email.lastIndexOf('.')) || (email.indexOf('@') <= 0)  ? true : false;
-}
-
-function showCallout(msg)  {
-  $('.valid-callout > h2').text(msg);
-  $('.valid-callout').css('visibility', 'visible');
-  setTimeout(hideCallout, 2000);
-}
-
 function validateFirst(name) {
   var minValidLetters = 3;
   return (name.length < minValidLetters) ? true : false;
+}
+
+function  validateEmail(email)  {
+  return (email.indexOf('@') + 1 === email.lastIndexOf('.')) || (email.indexOf('@') <= 0)  ? true : false;
 }
